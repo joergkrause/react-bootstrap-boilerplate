@@ -1,0 +1,45 @@
+{
+  "name": "texxtoor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build",
+    "serve": "http-server ./dist/ -p 3000 -c-1 -o",
+    "start": "npm run build && npm run serve"
+  },
+  "author": "Joerg <IsAGeek> (http://www.joergkrause.de)",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "hoist-non-react-statics": "^1.2.0",
+    "invariant": "^2.2.2",
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-facebook-login-component": "^0.7.0",
+    "react-google-login-component": "^0.7.0",
+    "react-materialize": "^0.18.3",
+    "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-validation": "^2.10.9",
+    "redux": "^3.6.0",
+    "systemjs-plugin-babel": "0.0.21"
+  },
+  "devDependencies": {
+    "@types/react": "^15.0.23",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-redux": "^4.4.40",
+    "@types/react-router-dom": "^4.0.4",
+    "gulp": "^3.9.1",
+    "gulp-cleanhtml": "^1.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2",
+    "http-server": "^0.9.0",
+    "systemjs-builder": "^0.16.4",
+    "webpack": "^2.5.1"
+  }
+}
