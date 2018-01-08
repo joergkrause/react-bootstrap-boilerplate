@@ -6,7 +6,7 @@ import * as FluxConstants from './constants';
 
 import { User } from '../../models/user';
 
-import { fetchCallback } from '../../services/fetchCallback';
+import { fetchCallback } from '../../services/fetchcallback';
 
 export interface ISigninAction extends Redux.Action {
     email: string;

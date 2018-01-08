@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 export class FromgroupProperties {
-    children?: Node;
+    children?: JSX.Element;
     groupClasses?: string;
     hasError?: boolean;
     help?: string;
@@ -15,8 +15,8 @@ export class FromgroupProperties {
 
 export class Formgroup extends React.Component<FromgroupProperties, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     public render(): any {

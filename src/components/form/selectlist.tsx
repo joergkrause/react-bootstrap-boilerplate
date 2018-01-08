@@ -5,11 +5,11 @@ import { Formgroup } from './formgroup';
 
 export class SelectList extends React.Component<any, any> {
 
-    constructor() {
-        super();
-    }
-
     input : HTMLSelectElement;
+
+    constructor(props) {
+        super(props);
+    }
 
     public render(): any {
 

@@ -3,8 +3,8 @@ import * as ReactDOM from 'react-dom';
 
 export class ChangePassword extends React.Component<any, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     public render(): any {

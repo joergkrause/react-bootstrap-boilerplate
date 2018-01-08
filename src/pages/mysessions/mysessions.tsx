@@ -19,8 +19,8 @@ class MySessionState {
 
 export class MySessions extends React.Component<any, MySessionState> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = { sessions: new Array<SessionViewModel>(), showHelp: true }; // init
     }
 

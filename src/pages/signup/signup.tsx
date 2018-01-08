@@ -1,8 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Unsubscribe } from 'redux';
-import { FacebookLogin } from 'react-facebook-login-component';
-import { GoogleLogin } from 'react-google-login-component';
 
 import { Alert, AlertType } from '../../components/alert';
 import { Formgroup } from '../../components/form/formgroup';
@@ -11,16 +9,17 @@ import { XButton } from '../../components/form/xbutton';
 import { Spinner } from '../../components/form/spinner';
 
 import { User } from '../../models/user';
-import { LoaderState } from '../../models/states/loaderState';
+import { LoaderState } from '../../models/states/loaderstate';
 
 import { SignUpErrorsType, SignUpHelpType } from './reducer';
 import Actions from './actions';
+import store from '../../store/store';
 
 export class SignUp extends React.Component<any, LoaderState<SignUpErrorsType, SignUpHelpType>> {
 
-    constructor() {
-        super();
-        this.state = null; //Store.getState();
+    constructor(props) {
+        super(props);
+        this.state = store.getState() as LoaderState<SignUpErrorsType, SignUpHelpType>;
         this.input = {
             firstName: null,
             lastName: null,
@@ -165,7 +164,7 @@ export class SignUp extends React.Component<any, LoaderState<SignUpErrorsType, S
                 disabled={this.state.loading}
             />
             <Formgroup hideLabel={true} hideHelp={true}>
-                <XButton
+                <XButton 
                     type="submit"
                     onClick={(e) => this.handleSignup(e)}
                     inputClasses="btn-primary"
@@ -175,23 +174,6 @@ export class SignUp extends React.Component<any, LoaderState<SignUpErrorsType, S
                         <Spinner space="left" show={this.state.loading} />
                 </XButton>
             </Formgroup>
-        </form>;
-        socialElements = <form onSubmit={(e) => this.handleSocialSubmit(e)}>
-            <h3>Soziale Konten</h3>
-            <FacebookLogin socialId="yourAppID"
-                language="en_US"
-                scope="public_profile,email"
-                responseHandler={this.responseFacebook}
-                xfbml={true}
-                fields="id,email,name"
-                version="v2.5"
-                class="facebook-login"
-                buttonText="Mit Facebook anmelden" />
-            <GoogleLogin socialId="yourClientID"
-                class="google-login"
-                scope="profile"
-                responseHandler={this.responseGoogle}
-                buttonText="Login With Google" />
         </form>;
 
         return (

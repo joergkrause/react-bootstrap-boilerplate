@@ -18,8 +18,8 @@ export class TextareaProperties {
 
 export class Textarea extends React.Component<TextareaProperties, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     focus() {

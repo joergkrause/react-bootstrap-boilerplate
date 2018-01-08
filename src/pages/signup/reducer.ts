@@ -1,7 +1,7 @@
 import { FluxConstants } from './constants';
 import * as Redux from 'redux';
 
-import ParseValidation from '../../services/parseValidation';
+import ParseValidation from '../../services/parsevalidation';
 
 import { LoaderState } from '../../models/states/loaderstate';
 

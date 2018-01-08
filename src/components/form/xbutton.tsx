@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 //import { Button, Icon } from 'react-materialize';
 
 class ButtonProperties {
-    children?: Node;
+    children?: any;
     disabled?: boolean;
     inputClasses?: string;
     submitIcon?: boolean;
@@ -16,9 +16,10 @@ class ButtonProperties {
 
 export class XButton extends React.Component<ButtonProperties, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
+
 
     handleClick(event: React.MouseEvent<HTMLButtonElement>): void {
         console.log("xbutton click");

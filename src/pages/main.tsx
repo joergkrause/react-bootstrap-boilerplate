@@ -7,8 +7,8 @@ interface TickCountState {
 
 export class Main extends React.Component<any, TickCountState> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = { element: 0 };
     }
 
@@ -40,8 +40,7 @@ export class Main extends React.Component<any, TickCountState> {
                             </span>
                         </h1>
                     </div>
-                </div>
-                <a name="intro" />
+                </div>                
                 <div id="intro" className="section scrollspy">
                     <div className="container">
                         <div className="row">
@@ -79,7 +78,6 @@ export class Main extends React.Component<any, TickCountState> {
                         </div>
                     </div>
                 </div>
-                <a name="work" />
                 <div className="section scrollspy" id="work">
                     <div className="container">
                         <h2 className="header text_b">Funktionen </h2>
@@ -177,7 +175,6 @@ export class Main extends React.Component<any, TickCountState> {
                         </div>
                     </div>
                 </div>
-                <a name="team" />
                 <div className="section scrollspy" id="team">
                     <div className="container">
                         <h2 className="header text_b"> Our Team </h2>

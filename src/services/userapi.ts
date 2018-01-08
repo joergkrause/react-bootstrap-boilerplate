@@ -3,7 +3,7 @@ import { Action } from 'redux';
 
 import { User } from '../models/user';
 
-import { fetchCallback } from '../services/fetchCallback';
+import { fetchCallback } from '../services/fetchcallback';
 
 export class UserApi {
 

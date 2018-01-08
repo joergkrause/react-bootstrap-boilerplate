@@ -2,7 +2,7 @@ import * as FluxConstants from './constants';
 import * as Redux from 'redux';
 
 import { UserApi } from '../../services/userapi';
-import ParseValidation from '../../services/parseValidation';
+import ParseValidation from '../../services/parsevalidation';
 
 import { LoaderState } from '../../models/states/loaderstate';
 import { SigninAction, ISigninAction, SigninActionResponse, ISigninActionResponse } from './actions';

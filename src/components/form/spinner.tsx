@@ -9,8 +9,8 @@ export class SpinnerProperties {
 
 export class Spinner extends React.Component<any, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     public render(): any {

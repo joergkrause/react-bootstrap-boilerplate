@@ -4,8 +4,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import * as Redux from 'redux';
 import { connect } from 'react-redux';
 
-import { FacebookLogin } from 'react-facebook-login-component';
-import { GoogleLogin } from 'react-google-login-component';
 import { MySessions } from '../mysessions/mysessions';
 
 import { Alert, AlertType } from '../../components/alert';
@@ -15,8 +13,8 @@ import { XButton } from '../../components/form/xbutton';
 import { Spinner } from '../../components/form/spinner';
 
 import { User } from '../../models/user';
-import { LoaderState } from '../../models/states/loaderState';
-import { fetchCallback } from '../../services/fetchCallback';
+import { LoaderState } from '../../models/states/loaderstate';
+import { fetchCallback } from '../../services/fetchcallback';
 
 import { SignInErrorsType, SignInHelpType } from './reducer';
 import { SigninAction, SigninActionResponse } from './actions';
@@ -28,8 +26,8 @@ interface SigninProps {
 //@connect()
 export class SignIn extends React.Component<any, LoaderState<SignInErrorsType, SignInHelpType>> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             loading: false,
             success: false
@@ -145,23 +143,6 @@ export class SignIn extends React.Component<any, LoaderState<SignInErrorsType, S
                     </XButton>
                 </Formgroup>
             </form>;
-        socialElements = <form className="col s12">
-            <h3>Soziale Konten</h3>
-            <FacebookLogin socialId="yourAppID"
-                language="en_US"
-                scope="public_profile,email"
-                responseHandler={(e) => this.responseFacebook(e)}
-                xfbml={true}
-                fields="id,email,name"
-                version="v2.5"
-                class="facebook-login btn waves-effect waves-light right"
-                buttonText="Mit Facebook anmelden" />
-            <GoogleLogin socialId="yourClientID"
-                class="google-login btn waves-effect waves-light"
-                scope="profile"
-                responseHandler={(e) => this.responseGoogle(e)}
-                buttonText="Mit Google anmelden" />
-        </form>;
 
         return (
             <div className="container">

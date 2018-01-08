@@ -18,8 +18,8 @@ export class AlertPropType {
 
 export class Alert extends React.Component<AlertPropType, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     public render(): any {

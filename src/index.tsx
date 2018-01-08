@@ -26,8 +26,8 @@ class MainMenuProps {
 
 class MainMenu extends React.Component<MainMenuProps, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     private signOff(): void {

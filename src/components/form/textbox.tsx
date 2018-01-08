@@ -20,8 +20,8 @@ class TextboxProperties {
 
 export class Textbox extends React.Component<TextboxProperties, any> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     focus() {

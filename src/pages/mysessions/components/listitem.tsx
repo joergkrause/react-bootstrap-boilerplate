@@ -20,8 +20,8 @@ class ListItemState {
 
 export class ListItem extends React.Component<ListItemProperties, ListItemState> {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = new ListItemState(false);
     }
 
