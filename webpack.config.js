@@ -1,21 +1,50 @@
+const path = require('path');
+const webpack = require('webpack');
+// plug-ins
+const copyPlugin = require('copy-webpack-plugin');
+const cleanPlugin = require('clean-webpack-plugin');
+const uglifyPlugin = require('uglifyjs-webpack-plugin');
+const compressPlugin = require('compression-webpack-plugin');
+
 module.exports = {
-  entry: './src/index.tsx',
+  // Start of app
+  entry: './src/app.js',
+  // Distribution target
   output: {
-    filename: './dist/js/bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.bundle.js'
   },
-  resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
-  },
-
+  // build step
   module: {
-    loaders: [{ test: /\.tsx?$/, loader: 'ts-loader' }]
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react'],
+          plugins: ['transform-class-properties']
+        }
+      }
+    ]
   },
-
-  externals: {
-    'react': 'react',
-    'react-dom': 'reactdom',
-    'react-redux': 'reactredux',
-    'react-router': 'reactrouter',
-    'react-router-dom': 'reactrouterdom'
-  }
+  // configure
+  stats: {
+    colors: true
+  },
+  devtool: 'source-map',
+  // extensions through plug-ins
+  plugins: [
+    new cleanPlugin('./dist/**', {}),
+    new copyPlugin([
+      { from: 'src/index.html' },
+      { from: 'src/**/*.css' }
+    ]),
+    new uglifyPlugin(),
+    new compressPlugin({
+      test: /\.(js|css)/,
+      algorithm: 'gzip',
+      deleteOriginalAssets: false,
+      asset: '[path].gz[query]'
+    })
+  ]
 };
