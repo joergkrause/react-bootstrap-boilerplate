@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "A simple React project for demonstration and learning",
   "scripts": {
-    "webpack": "webpack",
-    "start": "http-server dist -p 3003 -o --gzip",
-    "webpack-server": "node_modules/.bin/webpack-dev-server"
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "start": "./node_modules/http-server/bin/http-server dist -p 3003 -o --gzip"    
   },
   "author": "",
   "license": "ISC",
