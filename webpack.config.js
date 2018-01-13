@@ -38,7 +38,7 @@ module.exports = {
     new copyPlugin([
       { from: 'src/index.html' },
       { from: 'src/assets/css/**/*.css' },
-      { from: 'src/assets/fonts/**/*.css' }
+      { from: 'src/assets/fonts/**/*.*' }
     ]),
     new uglifyPlugin(),
     new compressPlugin({
