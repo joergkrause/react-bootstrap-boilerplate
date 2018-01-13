@@ -37,7 +37,8 @@ module.exports = {
     new cleanPlugin('./dist/**', {}),
     new copyPlugin([
       { from: 'src/index.html' },
-      { from: 'src/**/*.css' }
+      { from: 'src/assets/css/**/*.css' },
+      { from: 'src/assets/fonts/**/*.css' }
     ]),
     new uglifyPlugin(),
     new compressPlugin({

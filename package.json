@@ -4,7 +4,7 @@
   "description": "A simple React project for demonstration and learning",
   "scripts": {
     "webpack": "webpack",
-    "start": "http-server dist -p 3003 -o ",
+    "start": "http-server dist -p 3003 -o --gzip",
     "webpack-server": "node_modules/.bin/webpack-dev-server"
   },
   "author": "",
