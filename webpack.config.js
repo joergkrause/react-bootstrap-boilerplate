@@ -10,13 +10,14 @@ module.exports = {
   // Start of app
   entry: './src/app.js',
   // Distribution target
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
   },
   // build step
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -40,7 +41,9 @@ module.exports = {
       { from: 'src/assets/css/**/*.css' },
       { from: 'src/assets/fonts/**/*.*' }
     ]),
-    new uglifyPlugin(),
+    new uglifyPlugin({
+      sourceMap: true
+    }),
     new compressPlugin({
       test: /\.(js|css)/,
       algorithm: 'gzip',

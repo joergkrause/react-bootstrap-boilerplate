@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
-    "start": "./node_modules/http-server/bin/http-server dist -p 3003 -o --gzip"    
+    "start": "./node_modules/http-server/bin/http-server dist -p 3003 -o --gzip"
   },
   "author": "",
   "license": "MIT",
@@ -32,6 +32,7 @@
     "http-server": "^0.11.1",
     "uglifyjs-webpack-plugin": "^1.2.3",
     "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
   }
 }
