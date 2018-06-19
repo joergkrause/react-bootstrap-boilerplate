@@ -7,16 +7,16 @@
     "url": "https://github.com/joergkrause/react-mini-demo.git"
   },
   "scripts": {
-    "build": "./node_modules/webpack/bin/webpack.js",
-    "start": "./node_modules/http-server/bin/http-server dist -p 3003 -o --gzip"
+    "build": "webpack",
+    "start": "http-server dist -p 3003 -o --gzip"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "create-react-class": "^15.6.3",
     "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-validation": "^3.0.7"
   },
   "devDependencies": {
